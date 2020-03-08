@@ -27,23 +27,15 @@ def stop_motor():
     init_motor()
     gpio.output(17, False)
     gpio.output(23, False)
-    gpio.output(22, False)
-    gpio.output(24, False)
 
-def stop_wheel():
-    init_motor()
-    gpio.output(13, False)
-    gpio.output(26, False)
 
-def turn_right():
+def turn(sec):
     init_wheel()
     gpio.output(13, True)
     gpio.output(26, False)
-
-def turn_left():
-    init_wheel()
-    gpio.output(13, False)
-    gpio.output(26, True)
+    time.sleep(sec)
+    #gpio.output(13, False)
+    gpio.cleanup() # stop
 
 def reverse():
     init_motor()
@@ -53,6 +45,8 @@ def reverse():
     gpio.output(24, True)
 
 #forward(1)
+stop_motor()
+gpio.cleanup() # stop
 
 
 
