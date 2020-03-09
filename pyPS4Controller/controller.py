@@ -241,7 +241,7 @@ class Controller(Actions):
             # thus they are blacklisted by default. Feel free to adjust this list to your linking when sub-classing
             self.black_listed_buttons += [6, 7, 8, 11, 12, 13]
 
-    def listen(self, timeout=30):
+    def listen(self, timeout=300):
         """
         Start listening for events on a given self.interface
         :param timeout: INT, seconds. How long you want to wait for the self.interface.
